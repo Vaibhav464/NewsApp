@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+@media screen and(min-width: 800px){
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+}
