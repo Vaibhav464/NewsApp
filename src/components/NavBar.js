@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
 
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-body-tertiary" data-bs-theme="dark">
+      <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-body-tertiary' data-bs-theme='dark'>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">News App</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,30 +14,7 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li className="nav-item dropdown">
-                <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Section
-                </Link>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/business">Business</Link></li>
-                  <li>
-                    <Link className="dropdown-item" to="/entertainment">Entertainment</Link></li>
-                  <li>
-                    <Link className="dropdown-item" to="/general">General</Link></li>
-                  <li>
-                    <Link className="dropdown-item" to="/health">Health</Link></li>
-                  <li>
-                    <Link className="dropdown-item" to="/science">Science</Link></li>
-                  <li>
-                    <Link className="dropdown-item" to="/sports">Sports</Link></li>
-                  <li>
-                    <Link className="dropdown-item" to="/technology">Technology</Link></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><Link className="dropdown-item" to="/">Something else here</Link></li>
-                </ul>
+                <Link className="nav-link" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/business">Business</Link></li>
@@ -54,6 +31,19 @@ const NavBar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/technology">Technology</Link></li>
             </ul>
+            <div className="form-check form-switch" >
+              <input
+                style={{ border: '1px solid' }}
+                className="form-check-input"
+                onClick={props.toggleMode}
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+              />
+              <label className='form-check-label text-light' htmlFor="flexSwitchCheckDefault">
+                Dark Mode
+              </label>
+            </div>
           </div>
         </div>
       </nav>
