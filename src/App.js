@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState } from 'react'
 import NavBar from './components/NavBar';
 import NewsBox from './components/NewsBox';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <LoadingBar
           color='#f11946'
@@ -43,7 +43,7 @@ const App = () => {
           <Route path='/technology' element={<NewsBox mode={mode} toggleMode={toggleMode} setProgress={setProgress} apiKey={apiKey} key='technology' pageSize={pageSize} country="in" category="technology" />}></Route>
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 
 }
